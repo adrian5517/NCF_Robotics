@@ -34,13 +34,13 @@ const HeroPage = () => {
           <div className="h-10 w-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center mr-3">
             <img src={ncflogo} alt="NCF Logo" className="h-10 w-10" />
           </div>
-          <span className="font-poppins text-orange-500 text-xl font-bold bg-gradient-to-r from-gray-300 to-gray-100 bg-clip-text pt-1">
+          <span className="font-poppins text-green-800 text-xl font-bold bg-gradient-to-r from-gray-300 to-gray-100 bg-clip-text pt-1">
             NCF ROBOTICS
           </span>
         </motion.div>
 
         {/* Navigation Links */}
-        <nav className="hidden lg:flex items-center space-x-8">
+        <nav className="hidden lg:flex items-center space-x-8 backdrop-blur-sm border border-white/40 p-1 hover:bg-white/30 shadow-sm rounded-lg ">
           {['Home', 'About', 'Projects', 'Events', 'Contact'].map((item, index) => (
             <motion.a
               key={index}
@@ -54,8 +54,7 @@ const HeroPage = () => {
                 duration: 2.2,
               }}
               href={`#${item.toLowerCase()}`}
-              className="relative text-orange-500 px-4 py-2 rounded-xl font-medium transition duration-300 group
-                         bg-white/20 backdrop-blur-md border border-white/30 hover:bg-white/30 shadow-sm"
+              className="relative text-green-800 px-4 py-2 font-medium transition duration-300 group"
             >
               {item}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
@@ -88,16 +87,18 @@ const HeroPage = () => {
                 damping: 15,
               }}
               className='ml-4 px-4 py-2 rounded-xl bg-gradient-to-r from-orange-400 sm:w-auto h-10 text-sm font-poppins
-              to-gray-200 text-violet-700 font-semibold hover:from-violet-700 hover:to-purple-700 hover:text-white
-              transition-all duration-500'>Contact Us</motion.button>
-      </div>
+              to-gray-200 text-green-800 font-semibold hover:from-violet-700 hover:to-purple-700 hover:text-white
+              transition-all duration-500 hidden md:block'>Contact Us</motion.button>
 
-      {/* Mobile Menu */}
-      <div className='md:hidden flex items-center'>
+        {/* Mobile Menu Button */}
         <motion.button 
-        whileTap={{ scale: 0.7 }}
-        onClick={toggleMenu}
-        className='text-gray-300'>
+          whileTap={{ scale: 0.7 }}
+          onClick={toggleMenu}
+          className='md:hidden text-green-800 ml-4'
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.6, duration: 0.5 }}
+        >
           {isOpen ? <FiX className='w-6 h-6' /> : <FiMenu className='w-6 h-6' />}
         </motion.button>
       </div>
