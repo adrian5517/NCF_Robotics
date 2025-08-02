@@ -16,8 +16,8 @@ const HeroPage = () => {
   const closeContactForm = () => setContactOpen(false);
 
   return (
-    <header className="absolute w-full z-50 transition-all duration-300 bg-gray-200">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between h-16 md:h-20">
+    <header className="absolute w-full z-50 transition-all duration-300 bg-transparent">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between h-16 md:h-20 bg-blurred">
         {/* Logo Section */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -69,7 +69,7 @@ const HeroPage = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.3, duration: 0.5 }}
             href="#"
-            className="text-blue-700 dark:text-blue-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+            className="text-green-700 dark:text-green-700 hover:text-blue-800 dark:hover:text-blue-400 transition-colors duration-300"
           >
             <FiFacebook className="w-7 h-7" />
           </motion.a>
@@ -86,8 +86,8 @@ const HeroPage = () => {
                 stiffness: 100,
                 damping: 15,
               }}
-              className='ml-4 px-4 py-2 rounded-xl bg-gradient-to-r from-orange-400 sm:w-auto h-10 text-sm font-poppins
-              to-gray-200 text-green-800 font-semibold hover:from-violet-700 hover:to-purple-700 hover:text-white
+              className='ml-4 px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-400 sm:w-auto h-10 text-sm font-poppins
+              to-gray-200 text-green-800 font-semibold hover:from-green-700 hover:to-green-800 hover:text-white
               transition-all duration-500 hidden md:block'>Contact Us</motion.button>
 
         {/* Mobile Menu Button */}
@@ -225,6 +225,10 @@ const HeroPage = () => {
         scene="https://prod.spline.design/70Y85EO9ECpfi6pA/scene.splinecode"
       />
     </header>
+
+    // Title Section
+    // left section
+    
   );
 };
 
