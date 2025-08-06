@@ -7,6 +7,7 @@ import '../src/assets/styles/font.css'
 import '../src/assets/styles/Bubble.css'
 import '../src/assets/styles/CustomCursors.css'
 import FloatingContainers from './FloatingContainers'
+import Home from '../components/HomeSection';
 
 const HeroPage = () => {
 
@@ -20,7 +21,7 @@ const HeroPage = () => {
   const closeContactForm = () => setContactOpen(false);
 
   return (
-    <header className="absolute w-full z-50 transition-all duration-300 bg-transparent">
+    <header className="absolute w-full z-50 transition-all duration-300 bg-gradient-to-br from-gray-200 via-gray-400 to-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between h-16 md:h-20 bg-blurred">
         {/* Logo Section */}
         <motion.div
@@ -42,6 +43,8 @@ const HeroPage = () => {
             NCF ROBOTICS
           </span>
         </motion.div>
+
+        
 
         {/* Navigation Links */}
         <nav className="hidden lg:flex items-center space-x-5 backdrop-blur-sm border border-white/40 p-1 hover:bg-white/30 shadow-sm rounded-lg ">
@@ -94,6 +97,10 @@ const HeroPage = () => {
               className='ml-4 px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-400 sm:w-auto h-10 text-sm font-poppins
               to-gray-200 text-green-800 font-semibold hover:from-green-700 hover:to-green-800 hover:text-white
               transition-all duration-500 hidden md:block'>Contact Us</motion.button>
+
+        
+        {/* Home Section */}
+          <Home className='absolute z-10'/>
 
         {/* Mobile Menu Button */}
         <motion.button 
@@ -153,6 +160,8 @@ const HeroPage = () => {
         </div>
       </motion.div>
 
+      
+
       {/* Contact Form Modal */}
       <AnimatePresence>
         {contactOpen && (
@@ -175,33 +184,33 @@ const HeroPage = () => {
             duration: 0.8
           }}
 
-          className='bg-white dark:bg-gray-800 rounded-xl shadow-xl w-full max-w-md p-6'>
+          className='bg-white dark:bg-green-50 rounded-xl shadow-xl w-full max-w-md p-6'>
             <div className='flex justify-between items-center mb-4'>
-              <h1 className='text-2xl font-bold text-gray-300'>Get in Touch</h1>
+              <h1 className='text-2xl font-bold text-green-900'>Get in Touch</h1>
 
               <button onClick={closeContactForm}>
-                <FiX className='w-5 h-5 text-gray-300 font-extrabold' />
+                <FiX className='w-5 h-5 text-green-700 font-extrabold' />
               </button>
             </div>
             {/* input fields for name, email, message */}
               <form className="space-y-4">
                 <div>
                   {/* Name */}
-                  <label htmlFor="name" className='block text-sm font-medium text-gray-300 mb-1'>Name</label>
-                  <input type="text" id="name" placeholder='Enter your Name' className='w-full px-4 py-2 border border-gray-600
-                  rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-violet-500 bg-gray-700' />
+                  <label htmlFor="name" className='block text-sm font-medium text-green-800 mb-1'>Name</label>
+                  <input type="text" id="name" placeholder='Enter your Name' className='w-full px-4 py-2 border border-green-700
+                  rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-gray-200' />
                 </div>
                 {/* Email */}
                 <div>
-                  <label htmlFor="email" className='block text-sm font-medium text-gray-300 mb-1'>Email</label>
-                  <input type="email" id="email" placeholder='Enter your Email' className='w-full px-4 py-2 border border-gray-600
-                  rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-violet-500 bg-gray-700' />
+                  <label htmlFor="email" className='block text-sm font-medium text-green-800 mb-1'>Email</label>
+                  <input type="email" id="email" placeholder='Enter your Email' className='w-full px-4 py-2 border border-green-700
+                  rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-gray-200' />
                 </div>
                 {/* Message */}
                 <div>
-                  <label htmlFor="message" className='block text-sm font-medium text-gray-300 mb-1'>Message</label>
-                  <textarea rows="4" id="message" placeholder='How can we help you?' className='w-full px-4 py-2 border border-gray-600
-                  rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-violet-500 bg-gray-700' />
+                  <label htmlFor="message" className='block text-sm font-medium text-green-800 mb-1'>Message</label>
+                  <textarea rows="4" id="message" placeholder='How can we help you?' className='w-full px-4 py-2 border border-green-700
+                  rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-gray-200' />
                 </div>
 
                 {/* Submit Button */}
@@ -209,15 +218,16 @@ const HeroPage = () => {
                 type="submit"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className='w-full px-4 py-2 bg-gradient-to-r from-violet-600 to-violet-400
-                hover:from-violet-700 hover:to-purple-700 transition-all duration-300 rounded-lg shadow-md
-                hover:shadow-lg hover:shadow-violet-600/50'
+                className='w-full px-4 py-2 bg-gradient-to-r from-green-700 to-green-900
+                hover:from-green-800 hover:to-green-600 transition-all duration-300 rounded-lg shadow-md
+                hover:shadow-lg hover:shadow-green-600/50 text-white font-semibold'
                 >Send Message</motion.button>
 
               </form>
 
           </motion.div>
 
+          
         </motion.div>
       )}
       </AnimatePresence>
@@ -226,11 +236,16 @@ const HeroPage = () => {
 
       {/* Spline Section */}
       <Spline
-        className="flex justify-center items-center h-[100vh] md:h-[80vh] w-full overflow-hidden "
+        className="relative flex justify-center items-center h-[100vh] md:h-[80vh] w-full overflow-hidden z-[999] "
         scene="https://prod.spline.design/70Y85EO9ECpfi6pA/scene.splinecode"
       />
-    </header>
 
+      {/* Floating Containers */}
+      <FloatingContainers />
+
+      
+    </header>
+    
     // Title Section
     // left section
     
