@@ -1,10 +1,12 @@
 import { motion } from "motion/react"
 import '../src/assets/styles/font.css'
 import '../src/assets/styles/Bubble.css'
+import '../src/assets/styles/CustomCursors.css'
+import FloatingContainers from './FloatingContainers'
 
 const HomeSection = () => {
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden cursor-tech">
       {/* Sci-fi background with animated elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-200 via-gray-400 to-black">
         {/* Animated grid pattern */}
@@ -88,22 +90,22 @@ const HomeSection = () => {
             stiffness: 100,
             duration: 1 
         }}
-        className="relative z-10 flex flex-col items-center justify-center h-screen text-white text-center p-6"
+        className="relative z-10 flex flex-col items-start justify-center h-screen text-white pl-8 sm:pl-12 lg:pl-16 xl:pl-20"
       >
         {/* Enhanced title with sci-fi effects */}
-        <div className="relative mb-8">
+        <div className="relative mb-8 text-left">
           {/* Glow effect behind text */}
           <div className="absolute inset-0 blur-3xl">
-            <h2 className="text-center section-font text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-cyan-400/30">
-              NCF Robotics
+            <h2 className="text-left section-font text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-cyan-400/30">
+              NCF ROBOTICS
             </h2>
           </div>
           
-          <h2 className="relative text-center section-font text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-green-900 drop-shadow-2xl">
-            {"NCF Robotics".split("").map((child, idx) => (
+          <h2 className="relative text-left section-font text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-green-900 drop-shadow-2xl cursor-text">
+            {"NCF-ROBOTICS".split("").map((child, idx) => (
               <motion.span 
                 key={idx}
-                className="hoverText inline-block"
+                className="hoverText inline-block cursor-text transition-all duration-300"
                 initial={{ 
                   opacity: 0,
                   y: 50,
@@ -133,7 +135,7 @@ const HomeSection = () => {
         </div>
 
         {/* Enhanced subtitle with sci-fi styling */}
-        <div className="relative">
+        <div className="relative text-left">
           <motion.h2 
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -143,7 +145,7 @@ const HomeSection = () => {
               damping: 15,
               stiffness: 100 
             }}
-            className="text-center section-font text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-orange-500 mt-4 z-[999] relative"
+            className="text-left section-font text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-orange-500 mt-4 z-[999] relative cursor-innovation"
           >
             {/* Animated border */}
             <motion.div
@@ -162,10 +164,11 @@ const HomeSection = () => {
               className="absolute inset-0 border border-orange-500/30 rounded-lg -m-4"
             />
             
-            {"  Leap Into        The Future.".split("").map((child, idx) => (
+            {"Leap Into The Future.".split("").map((child, idx) => (
               <motion.span 
                 key={idx}
-                className="hoverText inline-block"
+                className="hoverText inline-block cursor-innovation transition-all duration-300"
+                
                 initial={{ 
                   opacity: 0,
                   y: 30 
@@ -198,81 +201,17 @@ const HomeSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 3, duration: 0.8 }}
-          className="text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mx-auto mt-8 mb-12 leading-relaxed px-4 font-light"
+          className="text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mt-8 mb-12 leading-relaxed font-light text-left cursor-text"
         >
           <span className="text-cyan-400">Discover</span> cutting-edge robotics technology and innovation. 
           <span className="text-purple-400"> Join us</span> in shaping tomorrow's automated world with 
           <span className="text-green-400"> advanced AI</span> and precision engineering.
         </motion.p>
 
-        {/* Sci-fi CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 3.5, duration: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center justify-center"
-        >
-          <motion.button
-            whileHover={{ 
-              scale: 1.05,
-              boxShadow: "0 0 30px rgba(0, 255, 255, 0.5)"
-            }}
-            whileTap={{ scale: 0.95 }}
-            className="group relative px-8 py-4 bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 min-w-[200px] border border-cyan-400/30 z-[999]"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-cyan-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <span className="relative z-10 flex items-center justify-center gap-2">
-              Initialize System
-              <motion.span
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-                className="text-cyan-300"
-              >
-                ➤
-              </motion.span>
-            </span>
-          </motion.button>
-
-          <motion.button
-            whileHover={{ 
-              scale: 1.05,
-              borderColor: "#00ffff",
-              color: "#00ffff",
-              boxShadow: "0 0 20px rgba(0, 255, 255, 0.3)"
-            }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 border-2 border-gray-500 text-gray-300 font-semibold rounded-lg transition-all duration-300 min-w-[200px] backdrop-blur-sm"
-          >
-            Explore Tech
-          </motion.button>
-        </motion.div>
-
-        {/* Animated scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 4, duration: 1 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center text-cyan-400"
-          >
-            <span className="text-xs mb-2 font-mono">SCROLL_DOWN</span>
-            <div className="w-6 h-10 border-2 border-cyan-400 rounded-full flex justify-center relative overflow-hidden">
-              <motion.div
-                animate={{ 
-                  y: [0, 12, 0],
-                  opacity: [1, 0.3, 1]
-                }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="w-1 h-3 bg-cyan-400 rounded-full mt-2 shadow-lg shadow-cyan-400/50"
-              />
-            </div>
-          </motion.div>
-        </motion.div>
       </motion.div>
+
+      {/* Floating Containers Component */}
+      <FloatingContainers />
     </div>
   )
 }

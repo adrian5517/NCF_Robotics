@@ -221,7 +221,7 @@ const HeroPage = () => {
 
       {/* Spline Section */}
       <Spline
-        className="flex justify-center items-center h-[100vh] md:h-[80vh] w-full overflow-hidden"
+        className="flex justify-center items-center h-[100vh] md:h-[80vh] w-full overflow-hidden "
         scene="https://prod.spline.design/70Y85EO9ECpfi6pA/scene.splinecode"
       />
     </header>
