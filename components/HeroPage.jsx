@@ -3,6 +3,10 @@ import { motion , AnimatePresence } from 'framer-motion';
 import ncflogo from '../src/assets/images/ncf_logo.png';
 import { FiFacebook, FiX, FiMenu } from 'react-icons/fi';
 import { useState } from 'react';
+import '../src/assets/styles/font.css'
+import '../src/assets/styles/Bubble.css'
+import '../src/assets/styles/CustomCursors.css'
+import FloatingContainers from './FloatingContainers'
 
 const HeroPage = () => {
 
@@ -40,8 +44,8 @@ const HeroPage = () => {
         </motion.div>
 
         {/* Navigation Links */}
-        <nav className="hidden lg:flex items-center space-x-8 backdrop-blur-sm border border-white/40 p-1 hover:bg-white/30 shadow-sm rounded-lg ">
-          {['Home', 'About', 'Projects', 'Events', 'Contact'].map((item, index) => (
+        <nav className="hidden lg:flex items-center space-x-5 backdrop-blur-sm border border-white/40 p-1 hover:bg-white/30 shadow-sm rounded-lg ">
+          {['Home', 'About', 'Camp', 'Achievements', 'Events' , "Gallery", "Contact"].map((item, index) => (
             <motion.a
               key={index}
               initial={{ opacity: 0, y: -50 }}
@@ -61,6 +65,7 @@ const HeroPage = () => {
             </motion.a>
           ))}
         </nav>
+        
 
         {/* Social Icons */}
         <div className="hidden md:flex items-center space-x-4">
@@ -117,7 +122,7 @@ const HeroPage = () => {
       className='md:hidden overflow-hidden bg-white dark:bg-gray-900
       shadow-lg px-4 py-5 space-y-5'>
         <nav className='flex flex-col space-y-4 font-poppins'>
-          {["Home","About", "Projects", "Events", "Contact"].map((item)=>(
+          {["Home","About", "Camp", "Achievements", "Events", "Gallery", "Contact"].map((item)=>(
             <a 
             className='text-gray-300 font-medium py-2'
             onClick={toggleMenu}

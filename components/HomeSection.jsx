@@ -145,7 +145,7 @@ const HomeSection = () => {
               damping: 15,
               stiffness: 100 
             }}
-            className="text-left section-font text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-orange-500 mt-4 z-[999] relative cursor-innovation"
+            className="text-left section-font text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-orange-500 mt-4 z-[999] relative cursor-innovation"
           >
             {/* Animated border */}
             <motion.div
@@ -161,7 +161,7 @@ const HomeSection = () => {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="absolute inset-0 border border-orange-500/30 rounded-lg -m-4"
+              className="absolute inset-0 border border-orange-500/20 rounded-lg -m-4 text-sm "
             />
             
             {"Leap Into The Future.".split("").map((child, idx) => (
@@ -201,12 +201,71 @@ const HomeSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 3, duration: 0.8 }}
-          className="text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mt-8 mb-12 leading-relaxed font-light text-left cursor-text"
+          className="text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mt-8 mb-8 leading-relaxed font-light text-left cursor-text z-[999] relative"
         >
           <span className="text-cyan-400">Discover</span> cutting-edge robotics technology and innovation. 
           <span className="text-purple-400"> Join us</span> in shaping tomorrow's automated world with 
           <span className="text-green-400"> advanced AI</span> and precision engineering.
         </motion.p>
+
+        {/* Modern Get Started Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 3.5, duration: 0.8 }}
+          className="z-[999] relative"
+        >
+          <motion.button
+            whileHover={{ 
+              scale: 1.05,
+              boxShadow: "0 0 30px rgba(0, 255, 255, 0.4)",
+              backgroundColor: "rgba(0, 255, 255, 0.1)"
+            }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => {
+              // Navigate to about section or page
+              const aboutSection = document.getElementById('about');
+              if (aboutSection) {
+                aboutSection.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                // If using React Router, replace with navigate('/about')
+                window.location.href = '#about';
+              }
+            }}
+            className="group relative px-8 py-4 bg-gradient-to-r from-transparent via-gray-800/50 to-transparent border-2 border-cyan-400/60 text-white font-semibold rounded-xl overflow-hidden transition-all duration-300 min-w-[180px] backdrop-blur-sm cursor-button hover:border-cyan-300"
+          >
+            {/* Animated background effect */}
+            <motion.div
+              animate={{
+                x: ["-100%", "100%"]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent"
+            />
+            
+            {/* Button content */}
+            <span className="relative z-10 flex items-center justify-center gap-3">
+              <span>Get Started</span>
+              <motion.span
+                animate={{ x: [0, 5, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="text-cyan-300 text-lg"
+              >
+                →
+              </motion.span>
+            </span>
+            
+            {/* Corner accents */}
+            <div className="absolute top-1 left-1 w-3 h-3 border-l-2 border-t-2 border-cyan-400/60"></div>
+            <div className="absolute top-1 right-1 w-3 h-3 border-r-2 border-t-2 border-cyan-400/60"></div>
+            <div className="absolute bottom-1 left-1 w-3 h-3 border-l-2 border-b-2 border-cyan-400/60"></div>
+            <div className="absolute bottom-1 right-1 w-3 h-3 border-r-2 border-b-2 border-cyan-400/60"></div>
+          </motion.button>
+        </motion.div>
 
       </motion.div>
 
