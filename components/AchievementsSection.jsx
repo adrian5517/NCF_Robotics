@@ -17,63 +17,53 @@ const AchievementsSection = () => {
   const achievements = [
     {
       id: 1,
-      title: "AI Robotics Certification",
-      category: "certification",
+      title: "13th First Lego League",
+      category: "award",
       date: "2024",
-      description: "Advanced certification in AI-powered robotics and machine learning integration",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400", 
-      tags: ["AI", "Robotics", "Machine Learning"],
-      institution: "MIT Technology Institute"
+      description: "Participated in the prestigious 13th First Lego League robotics competition, showcasing innovative robotics solutions",
+      image: "/src/certificates/13th_First_Lego_League.jpg", 
+      tags: ["Robotics", "Competition", "Lego League"],
+      institution: "First Lego League"
     },
     {
       id: 2,
-      title: "National Robotics Competition",
-      category: "award",
-      date: "2024",
-      description: "First place winner in the National Collegiate Robotics Championship",
-      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400",
-      tags: ["Competition", "First Place", "Robotics"],
-      institution: "National Robotics Federation"
+      title: "2nd Bicol Business Summit",
+      category: "certification",
+      date: "2025",
+      description: "Recognition at the 2nd Bicol Business Summit for outstanding contribution to technology and innovation",
+      image: "/src/certificates/2nd_Bicol_Business_Summit.jpg",
+      tags: ["Business", "Innovation", "Summit"],
+      institution: "Bicol Business Council"
     },
     {
       id: 3,
-      title: "Advanced Programming Certificate",
-      category: "certification",
-      date: "2023",
-      description: "Professional certification in advanced programming and software architecture",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400",
-      tags: ["Programming", "Software", "Architecture"],
-      institution: "Stanford Computer Science"
+      title: "Ark Hackathon 2025",
+      category: "award",
+      date: "2025",
+      description: "Winner of the Ark Hackathon 2025, demonstrating exceptional programming and problem-solving skills",
+      image: "/src/certificates/Ark_Hackathon_2025.jpg",
+      tags: ["Hackathon", "Programming", "Innovation"],
+      institution: "Beecall"
     },
     {
       id: 4,
-      title: "Innovation Project Showcase",
-      category: "project",
+      title: "Innovative Ideas Award",
+      category: "award",
       date: "2024",
-      description: "Featured project in the International Innovation and Technology Expo",
-      image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400",
-      tags: ["Innovation", "Technology", "Expo"],
-      institution: "International Tech Expo"
+      description: "Recognized for presenting innovative ideas that push the boundaries of robotics and technology",
+      image: "/src/certificates/Innovative_Ideas.jpg",
+      tags: ["Innovation", "Ideas", "Technology"],
+      institution: "National Robotics Competition"
     },
     {
       id: 5,
-      title: "Leadership Excellence Award",
-      category: "award",
-      date: "2023",
-      description: "Recognition for outstanding leadership in student robotics organizations",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400",
-      tags: ["Leadership", "Excellence", "Organization"],
-      institution: "Student Leadership Council"
-    },
-    {
-      id: 6,
-      title: "Research Publication",
-      category: "publication",
+      title: "Innovative Prototype",
+      category: "project",
       date: "2024",
-      description: "Published research on autonomous navigation systems in IEEE Robotics Journal",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
-      tags: ["Research", "Publication", "Navigation"],
-      institution: "IEEE Robotics Journal"
+      description: "Developed an innovative prototype that demonstrates cutting-edge robotics capabilities and real-world applications",
+      image: "/src/certificates/Innovative_Prototype.jpg",
+      tags: ["Prototype", "Innovation", "Development"],
+      institution: "National Robotics Competition"
     }
   ]
 
@@ -81,8 +71,7 @@ const AchievementsSection = () => {
     { key: 'all', label: 'All Achievements', icon: '🏆' },
     { key: 'certification', label: 'Certifications', icon: '📜' },
     { key: 'award', label: 'Awards', icon: '🥇' },
-    { key: 'project', label: 'Projects', icon: '🚀' },
-    { key: 'publication', label: 'Publications', icon: '📚' }
+    { key: 'project', label: 'Projects', icon: '🚀' }
   ]
 
   const filteredAchievements = filter === 'all' 
@@ -318,10 +307,10 @@ const AchievementsSection = () => {
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {[
-            { number: "15+", label: "Certifications", icon: "📜" },
-            { number: "8", label: "Awards Won", icon: "🏆" },
-            { number: "12", label: "Projects", icon: "🚀" },
-            { number: "3", label: "Publications", icon: "📚" }
+            { number: "5+", label: "Achievements", icon: "🏆" },
+            { number: "3", label: "Awards Won", icon: "🥇" },
+            { number: "2", label: "Certifications", icon: "�" },
+            { number: "1", label: "Prototype", icon: "�" }
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-4xl mb-2">{stat.icon}</div>
