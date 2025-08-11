@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const FloatingContainers = () => {
   return (
     <motion.div
-      className="fixed top-24 right-6 lg:right-12 z-[999] flex flex-col gap-6 items-end"
+      className="hidden xl:flex fixed top-24 right-6 lg:right-12 z-[999] flex-col gap-6 items-end"
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 1 }}

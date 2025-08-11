@@ -1,4 +1,3 @@
-import Spline from '@splinetool/react-spline';
 import { motion , AnimatePresence } from 'framer-motion';
 import ncflogo from '../src/assets/images/ncf_logo.png';
 import { FiFacebook, FiX, FiMenu } from 'react-icons/fi';
@@ -21,99 +20,125 @@ const HeroPage = () => {
   const closeContactForm = () => setContactOpen(false);
 
   return (
-    <header className="absolute w-full z-50 transition-all duration-300 bg-gradient-to-br from-gray-200 via-gray-400 to-black">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between h-16 md:h-20 bg-blurred">
-        {/* Logo Section */}
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            type: 'spring',
-            stiffness: 100,
-            damping: 25,
-            delay: 0.3,
-            duration: 2.2,
-          }}
-          className="flex items-center"
-        >
-          <div className="h-10 w-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center mr-3">
-            <img src={ncflogo} alt="NCF Logo" className="h-10 w-10" />
-          </div>
-          <span className="font-poppins text-green-800 text-xl font-bold bg-gradient-to-r from-gray-300 to-gray-100 bg-clip-text pt-1">
-            NCF ROBOTICS
-          </span>
-        </motion.div>
-
-        
-
-        {/* Navigation Links */}
-        <nav className="hidden lg:flex items-center space-x-5 backdrop-blur-sm border border-white/40 p-1 hover:bg-white/30 shadow-sm rounded-lg ">
-          {['Home', 'About', 'Camp', 'Achievements', 'Events' , "Gallery", "Contact"].map((item, index) => (
-            <motion.a
-              key={index}
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                type: 'spring',
-                stiffness: 100,
-                damping: 25,
-                delay: 0.3 + index * 0.1,
-                duration: 2.2,
-              }}
-              href={`#${item.toLowerCase()}`}
-              className="relative text-green-800 px-4 py-2 font-medium transition duration-300 group"
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Fixed Responsive Navbar */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 md:h-20">
+            {/* Logo Section */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex items-center space-x-3"
             >
-              {item}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
-            </motion.a>
-          ))}
-        </nav>
-        
+              <div className="h-10 w-10 md:h-12 md:w-12 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 p-0.5">
+                <div className="h-full w-full rounded-full bg-black/50 flex items-center justify-center">
+                  <img src={ncflogo} alt="NCF Logo" className="h-8 w-8 md:h-10 md:w-10" />
+                </div>
+              </div>
+              <div className="hidden sm:block">
+                <span className="font-bold text-white text-lg md:text-xl bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                  NCF ROBOTICS
+                </span>
+              </div>
+            </motion.div>
 
-        {/* Social Icons */}
-        <div className="hidden md:flex items-center space-x-4">
-          <motion.a
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.3, duration: 0.5 }}
-            href="#"
-            className="text-green-700 dark:text-green-700 hover:text-blue-800 dark:hover:text-blue-400 transition-colors duration-300"
-          >
-            <FiFacebook className="w-7 h-7" />
-          </motion.a>
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center space-x-8">
+              {['Home', 'About', 'Achievements', 'Events', 'Gallery', 'Contact'].map((item, index) => (
+                <motion.a
+                  key={item}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                  href={`#${item.toLowerCase()}`}
+                  className="relative text-white/90 hover:text-white font-medium transition-all duration-300 group"
+                >
+                  {item}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-full transition-all duration-300"></span>
+                </motion.a>
+              ))}
+            </div>
+
+            {/* Desktop CTA & Social */}
+            <div className="hidden md:flex items-center space-x-4">
+              <motion.a
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+                href="#"
+                className="text-white/80 hover:text-cyan-400 transition-colors duration-300"
+              >
+                <FiFacebook className="w-6 h-6" />
+              </motion.a>
+              
+              <motion.button
+                onClick={openContactForm}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
+                className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-full hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 shadow-lg hover:shadow-cyan-500/25"
+              >
+                Contact Us
+              </motion.button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <motion.button
+              onClick={toggleMenu}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="lg:hidden p-2 text-white/90 hover:text-white transition-colors duration-300"
+            >
+              {isOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
+            </motion.button>
+          </div>
         </div>
 
-          <motion.button 
-              onClick={openContactForm}
-              initial={{ opacity: 0 , scale: 0.8}}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                delay:1.6,
-                duration: 0.8,
-                type: 'spring',
-                stiffness: 100,
-                damping: 15,
-              }}
-              className='ml-4 px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-400 sm:w-auto h-10 text-sm font-poppins
-              to-gray-200 text-green-800 font-semibold hover:from-green-700 hover:to-green-800 hover:text-white
-              transition-all duration-500 hidden md:block'>Contact Us</motion.button>
-
-        
-        {/* Home Section */}
-          <Home className='absolute z-10'/>
-
-        {/* Mobile Menu Button */}
-        <motion.button 
-          whileTap={{ scale: 0.7 }}
-          onClick={toggleMenu}
-          className='md:hidden text-green-800 ml-4'
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1.6, duration: 0.5 }}
-        >
-          {isOpen ? <FiX className='w-6 h-6' /> : <FiMenu className='w-6 h-6' />}
-        </motion.button>
-      </div>
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="lg:hidden bg-black/90 backdrop-blur-md border-t border-white/10"
+            >
+              <div className="px-4 py-6 space-y-4">
+                {['Home', 'About', 'Achievements', 'Events', 'Gallery', 'Contact'].map((item) => (
+                  <a
+                    key={item}
+                    href={`#${item.toLowerCase()}`}
+                    onClick={toggleMenu}
+                    className="block text-white/90 hover:text-cyan-400 font-medium py-2 transition-colors duration-300"
+                  >
+                    {item}
+                  </a>
+                ))}
+                
+                <div className="pt-4 border-t border-white/20 flex items-center justify-between">
+                  <a href="#" className="text-white/80 hover:text-cyan-400 transition-colors duration-300">
+                    <FiFacebook className="w-6 h-6" />
+                  </a>
+                  
+                  <button
+                    onClick={() => {
+                      toggleMenu();
+                      openContactForm();
+                    }}
+                    className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-full hover:from-cyan-400 hover:to-blue-400 transition-all duration-300"
+                  >
+                    Contact Us
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
       
 
       {/* Mobile Menu */}
@@ -127,9 +152,9 @@ const HeroPage = () => {
         duration: 0.5
       }}
       className='md:hidden overflow-hidden bg-white dark:bg-gray-900
-      shadow-lg px-4 py-5 space-y-5'>
-        <nav className='flex flex-col space-y-4 font-poppins'>
-          {["Home","About", "Camp", "Achievements", "Events", "Gallery", "Contact"].map((item)=>(
+      shadow-lg px-4 py-5 space-y-4'>
+        <nav className='flex flex-col space-y-3 font-poppins'>
+          {["Home","About", "Achievements", "Events", "Gallery", "Contact"].map((item)=>(
             <a 
             className='text-gray-300 font-medium py-2'
             onClick={toggleMenu}
@@ -184,33 +209,33 @@ const HeroPage = () => {
             duration: 0.8
           }}
 
-          className='bg-white dark:bg-green-50 rounded-xl shadow-xl w-full max-w-md p-6'>
+          className='bg-white/10 backdrop-blur-md rounded-xl shadow-xl w-full max-w-md p-6 border border-white/20'>
             <div className='flex justify-between items-center mb-4'>
-              <h1 className='text-2xl font-bold text-green-900'>Get in Touch</h1>
+              <h1 className='text-2xl font-bold text-white'>Get in Touch</h1>
 
               <button onClick={closeContactForm}>
-                <FiX className='w-5 h-5 text-green-700 font-extrabold' />
+                <FiX className='w-5 h-5 text-white/80 hover:text-white transition-colors duration-300' />
               </button>
             </div>
             {/* input fields for name, email, message */}
               <form className="space-y-4">
                 <div>
                   {/* Name */}
-                  <label htmlFor="name" className='block text-sm font-medium text-green-800 mb-1'>Name</label>
-                  <input type="text" id="name" placeholder='Enter your Name' className='w-full px-4 py-2 border border-green-700
-                  rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-gray-200' />
+                  <label htmlFor="name" className='block text-sm font-medium text-white/90 mb-1'>Name</label>
+                  <input type="text" id="name" placeholder='Enter your Name' className='w-full px-4 py-2 border border-white/20
+                  rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 bg-white/10 backdrop-blur-sm text-white placeholder-white/50' />
                 </div>
                 {/* Email */}
                 <div>
-                  <label htmlFor="email" className='block text-sm font-medium text-green-800 mb-1'>Email</label>
-                  <input type="email" id="email" placeholder='Enter your Email' className='w-full px-4 py-2 border border-green-700
-                  rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-gray-200' />
+                  <label htmlFor="email" className='block text-sm font-medium text-white/90 mb-1'>Email</label>
+                  <input type="email" id="email" placeholder='Enter your Email' className='w-full px-4 py-2 border border-white/20
+                  rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 bg-white/10 backdrop-blur-sm text-white placeholder-white/50' />
                 </div>
                 {/* Message */}
                 <div>
-                  <label htmlFor="message" className='block text-sm font-medium text-green-800 mb-1'>Message</label>
-                  <textarea rows="4" id="message" placeholder='How can we help you?' className='w-full px-4 py-2 border border-green-700
-                  rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-gray-200' />
+                  <label htmlFor="message" className='block text-sm font-medium text-white/90 mb-1'>Message</label>
+                  <textarea rows="4" id="message" placeholder='How can we help you?' className='w-full px-4 py-2 border border-white/20
+                  rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 bg-white/10 backdrop-blur-sm text-white placeholder-white/50' />
                 </div>
 
                 {/* Submit Button */}
@@ -218,9 +243,9 @@ const HeroPage = () => {
                 type="submit"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className='w-full px-4 py-2 bg-gradient-to-r from-green-700 to-green-900
-                hover:from-green-800 hover:to-green-600 transition-all duration-300 rounded-lg shadow-md
-                hover:shadow-lg hover:shadow-green-600/50 text-white font-semibold'
+                className='w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500
+                hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 rounded-lg shadow-md
+                hover:shadow-lg hover:shadow-cyan-500/50 text-white font-semibold'
                 >Send Message</motion.button>
 
               </form>
@@ -232,22 +257,21 @@ const HeroPage = () => {
       )}
       </AnimatePresence>
 
-      
+      {/* Main Content Container */}
+      <div className="relative min-h-screen">
+        {/* Content Overlay */}
+        <div className="relative z-10">
+          <Home />
+        </div>
 
-      {/* Spline Section */}
-      <Spline
-        className="relative flex justify-center items-center h-[100vh] md:h-[80vh] w-full overflow-hidden z-[999] "
-        scene="https://prod.spline.design/70Y85EO9ECpfi6pA/scene.splinecode"
-      />
-
-      {/* Floating Containers */}
-      <FloatingContainers />
-
-      
-    </header>
+        {/* Floating Containers */}
+        <div className="absolute inset-0 z-10">
+          <FloatingContainers />
+        </div>
+      </div>
+    </div>
     
-    // Title Section
-    // left section
+    // Main HeroPage Component
     
   );
 };
