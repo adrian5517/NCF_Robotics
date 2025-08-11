@@ -264,10 +264,7 @@ const HeroPage = () => {
           <Home />
         </div>
 
-        {/* Floating Containers */}
-        <div className="absolute inset-0 z-10">
-          <FloatingContainers />
-        </div>
+       
       </div>
     </div>
     
