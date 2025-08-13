@@ -46,7 +46,7 @@ const HomeSection = () => {
             height: '100%',
             pointerEvents: 'auto',
             transformOrigin: 'center',
-            background: 'linear-gradient(to bottom right, #013a18ff, #035824ff, #bea200ff)'
+            background: 'linear-gradient(to bottom right, #012911ff, #035824ff, #bea200ff)'
           }}
         />
         
@@ -104,12 +104,12 @@ const HomeSection = () => {
                 <div ref={titleRef} className="space-y-4" style={{ pointerEvents: 'none' }}>
                   <h1 className="text-5xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
                     <TextType
-                      text={["NCF ROBOTICS", "FUTURE TECH", "INNOVATION"]}
+                      text={["NCF", "ROBOTICS"]}
                       typingSpeed={80}
-                      pauseDuration={2500}
+                      pauseDuration={1000}
                       showCursor={true}
                       cursorCharacter="|"
-                      className="bg-gradient-to-r from-yellow-400 via-green-400 to-yellow-500 bg-clip-text text-transparent"
+                      className="bg-gradient-to-r from-yellow-400 via-green-400 to-yellow-500 bg-clip-text section-font"
                     />
                   </h1>
                 </div>
