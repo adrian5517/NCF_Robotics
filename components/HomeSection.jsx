@@ -37,21 +37,24 @@ const HomeSection = () => {
     <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Spline Background - Interactive */}
       <div className="absolute inset-0 z-0">
-        {/* <Spline
-          className="w-full h-full "
-          scene="https://prod.spline.design/70Y85EO9ECpfi6pA/scene.splinecode"
+        {/* Desktop Spline - Hidden on mobile */}
+        <Spline
+          className="w-full h-full hidden md:block"
+          scene="https://prod.spline.design/oUiFqAtE06aN-dbT/scene.splinecode"
           style={{
             width: '100%',
             height: '100%',
             pointerEvents: 'auto',
             transformOrigin: 'center',
-            background: 'linear-gradient(to bottom right, #013a18ff, #035824ff, #c5b202ff)'
+            background: 'linear-gradient(to bottom right, #013a18ff, #035824ff, #bea200ff)'
           }}
-        /> */}
+        />
+        
+        {/* Mobile Spline - Shown only on mobile */}
         <Spline
-        className="w-full h-full "
-        scene="https://prod.spline.design/SsGTbqYKisrW188l/scene.splinecode" 
-        style={{
+          className="w-full h-full block md:hidden"
+          scene="https://prod.spline.design/SsGTbqYKisrW188l/scene.splinecode" 
+          style={{
             width: '100%',
             height: '100%',
             pointerEvents: 'auto',
@@ -59,7 +62,7 @@ const HomeSection = () => {
             background: 'linear-gradient(to bottom right, #013a18ff, #035824ff, #c5b202ff)',
             transform: 'scaleX(-1)' // Flip horizontally for a mirrored effect
           }}
-      />
+        />
       </div>
 
       {/* Interactive Indicator */}
@@ -99,14 +102,14 @@ const HomeSection = () => {
 
                 {/* Main Title */}
                 <div ref={titleRef} className="space-y-4" style={{ pointerEvents: 'none' }}>
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+                  <h1 className="text-5xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
                     <TextType
                       text={["NCF ROBOTICS", "FUTURE TECH", "INNOVATION"]}
                       typingSpeed={80}
                       pauseDuration={2500}
                       showCursor={true}
                       cursorCharacter="|"
-                      className="bg-gradient-to-r from-white via-yellow-200 to-green-200 bg-clip-text text-transparent"
+                      className="bg-gradient-to-r from-yellow-400 via-green-400 to-yellow-500 bg-clip-text text-transparent"
                     />
                   </h1>
                 </div>
