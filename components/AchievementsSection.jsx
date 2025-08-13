@@ -167,13 +167,14 @@ const AchievementsSection = () => {
     <section 
       ref={sectionRef} 
       id="achievements" 
-      className="relative min-h-screen py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden"
+      className="relative min-h-screen py-20 bg-gradient-to-br from-gray-900 via-green-900/30 to-black overflow-hidden"
     >
       {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-700/15 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-yellow-600/12 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-green-800/8 to-yellow-700/6 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-green-900/10 via-transparent to-transparent"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -184,7 +185,7 @@ const AchievementsSection = () => {
             className="mb-6"
           >
             <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold">
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-yellow-600 via-green-400 to-yellow-600 bg-clip-text text-transparent">
                 Achievements
               </span>
             </h2>
@@ -208,7 +209,7 @@ const AchievementsSection = () => {
               whileTap={{ scale: 0.95 }}
               className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 filter === category.key
-                  ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg shadow-cyan-500/25'
+                  ? 'bg-gradient-to-r from-green-700 to-yellow-600 text-white shadow-lg shadow-green-500/25'
                   : 'bg-white/10 backdrop-blur-sm text-white/70 hover:bg-white/20 hover:text-white border border-white/20'
               }`}
             >
@@ -225,7 +226,7 @@ const AchievementsSection = () => {
           animate="visible"
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          <AnimatePresence mode="wait">
+          <AnimatePresence>
             {filteredAchievements.map((achievement, index) => (
               <motion.div
                 key={achievement.id}
@@ -237,7 +238,7 @@ const AchievementsSection = () => {
                 exit={{ opacity: 0 }}
                 whileHover={{ y: -10, scale: 1.02 }}
                 onClick={() => setSelectedCard(achievement)}
-                className="group relative bg-white/5 backdrop-blur-sm border border-white/20 rounded-2xl overflow-hidden cursor-pointer hover:border-cyan-500/50 transition-all duration-300"
+                className="group relative bg-white/5 backdrop-blur-sm border border-white/20 rounded-2xl overflow-hidden cursor-pointer hover:border-green-500/50 transition-all duration-300"
               >
                 {/* Card Image */}
                 <div className="relative h-48 overflow-hidden">
@@ -251,7 +252,7 @@ const AchievementsSection = () => {
                   
                   {/* Category badge */}
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-cyan-500/90 backdrop-blur-sm text-white text-xs font-medium rounded-full">
+                    <span className="px-3 py-1 bg-green-700/90 backdrop-blur-sm text-white text-xs font-medium rounded-full">
                       {achievement.category.charAt(0).toUpperCase() + achievement.category.slice(1)}
                     </span>
                   </div>
@@ -266,7 +267,7 @@ const AchievementsSection = () => {
 
                 {/* Card Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">
                     {achievement.title}
                   </h3>
                   
@@ -274,7 +275,7 @@ const AchievementsSection = () => {
                     {achievement.description}
                   </p>
                   
-                  <div className="text-cyan-400 text-sm font-medium mb-4">
+                  <div className="text-green-400 text-sm font-medium mb-4">
                     {achievement.institution}
                   </div>
 
@@ -283,7 +284,7 @@ const AchievementsSection = () => {
                     {achievement.tags.slice(0, 3).map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full"
+                        className="px-2 py-1 bg-yellow-600/20 text-yellow-300 text-xs rounded-full"
                       >
                         {tag}
                       </span>
@@ -292,7 +293,7 @@ const AchievementsSection = () => {
                 </div>
 
                 {/* Hover effect overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-green-700/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </motion.div>
             ))}
           </AnimatePresence>
@@ -314,7 +315,7 @@ const AchievementsSection = () => {
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-4xl mb-2">{stat.icon}</div>
-              <div className="text-3xl sm:text-4xl font-bold text-cyan-400 mb-1">{stat.number}</div>
+              <div className="text-3xl sm:text-4xl font-bold text-yellow-400 mb-1">{stat.number}</div>
               <div className="text-white/70 text-sm">{stat.label}</div>
             </div>
           ))}
@@ -337,12 +338,12 @@ const AchievementsSection = () => {
               animate="visible"
               exit="exit"
               onClick={(e) => e.stopPropagation()}
-              className="bg-slate-800 border border-white/20 rounded-2xl p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              className="bg-gray-900/95 backdrop-blur-md border border-green-500/30 rounded-2xl p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
             >
               <div className="flex justify-between items-start mb-6">
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-2">{selectedCard.title}</h3>
-                  <p className="text-cyan-400 font-medium">{selectedCard.institution}</p>
+                  <p className="text-green-400 font-medium">{selectedCard.institution}</p>
                 </div>
                 <button
                   onClick={() => setSelectedCard(null)}
@@ -352,7 +353,7 @@ const AchievementsSection = () => {
                 </button>
               </div>
 
-              <div className="h-64 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-xl mb-6 overflow-hidden">
+              <div className="h-64 bg-gradient-to-br from-green-700/20 to-yellow-600/20 rounded-xl mb-6 overflow-hidden">
                 <img 
                   src={selectedCard.image} 
                   alt={selectedCard.title}
@@ -366,7 +367,7 @@ const AchievementsSection = () => {
                 {selectedCard.tags.map((tag, index) => (
                   <span
                     key={index}
-                    className="px-3 py-1 bg-blue-500/20 text-blue-300 text-sm rounded-full"
+                    className="px-3 py-1 bg-yellow-600/20 text-yellow-300 text-sm rounded-full"
                   >
                     {tag}
                   </span>

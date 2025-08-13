@@ -9,7 +9,7 @@ body{
   padding: 0;
   overflow-x: hidden;
   font-family:'poppins', sans-serif;
-  background: #000;
+  background: linear-gradient(135deg, #000000 0%, #0f2027 25%, #1a4a3a 50%, #2d3748 75%, #000000 100%);
 }
 
 /* Text clamp utilities */
@@ -39,10 +39,10 @@ body{
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #06b6d4, #3b82f6);
+  background: linear-gradient(180deg, #15803d, #ca8a04);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #0891b2, #2563eb);
+  background: linear-gradient(180deg, #16a34a, #eab308);
 }

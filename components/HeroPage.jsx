@@ -32,13 +32,13 @@ const HeroPage = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="flex items-center space-x-3"
             >
-              <div className="h-10 w-10 md:h-12 md:w-12 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 p-0.5">
+              <div className="h-10 w-10 md:h-12 md:w-12 rounded-full bg-gradient-to-r from-green-700 to-yellow-600 p-0.5">
                 <div className="h-full w-full rounded-full bg-black/50 flex items-center justify-center">
                   <img src={ncflogo} alt="NCF Logo" className="h-8 w-8 md:h-10 md:w-10" />
                 </div>
               </div>
               <div className="hidden sm:block">
-                <span className="font-bold text-white text-lg md:text-xl bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                <span className="font-bold text-white text-lg md:text-xl bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">
                   NCF ROBOTICS
                 </span>
               </div>
@@ -56,7 +56,7 @@ const HeroPage = () => {
                   className="relative text-white/90 hover:text-white font-medium transition-all duration-300 group"
                 >
                   {item}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-green-400 group-hover:w-full transition-all duration-300"></span>
                 </motion.a>
               ))}
             </div>
@@ -68,7 +68,7 @@ const HeroPage = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 1.0 }}
                 href="#"
-                className="text-white/80 hover:text-cyan-400 transition-colors duration-300"
+                className="text-white/80 hover:text-yellow-400 transition-colors duration-300"
               >
                 <FiFacebook className="w-6 h-6" />
               </motion.a>
@@ -78,7 +78,7 @@ const HeroPage = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 1.2 }}
-                className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-full hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 shadow-lg hover:shadow-cyan-500/25"
+                className="px-6 py-2 bg-gradient-to-r from-green-700 to-yellow-600 text-white font-semibold rounded-full hover:from-green-600 hover:to-yellow-500 transition-all duration-300 shadow-lg hover:shadow-green-500/25"
               >
                 Contact Us
               </motion.button>
@@ -113,14 +113,14 @@ const HeroPage = () => {
                     key={item}
                     href={`#${item.toLowerCase()}`}
                     onClick={toggleMenu}
-                    className="block text-white/90 hover:text-cyan-400 font-medium py-2 transition-colors duration-300"
+                    className="block text-white/90 hover:text-yellow-400 font-medium py-2 transition-colors duration-300"
                   >
                     {item}
                   </a>
                 ))}
                 
                 <div className="pt-4 border-t border-white/20 flex items-center justify-between">
-                  <a href="#" className="text-white/80 hover:text-cyan-400 transition-colors duration-300">
+                  <a href="#" className="text-white/80 hover:text-yellow-400 transition-colors duration-300">
                     <FiFacebook className="w-6 h-6" />
                   </a>
                   
@@ -129,7 +129,7 @@ const HeroPage = () => {
                       toggleMenu();
                       openContactForm();
                     }}
-                    className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-full hover:from-cyan-400 hover:to-blue-400 transition-all duration-300"
+                    className="px-6 py-2 bg-gradient-to-r from-green-700 to-yellow-600 text-white font-semibold rounded-full hover:from-green-600 hover:to-yellow-500 transition-all duration-300"
                   >
                     Contact Us
                   </button>
@@ -180,7 +180,7 @@ const HeroPage = () => {
             openContactForm();
           }}
           className='mt-4 block w-full px-4 py-2 font-poppins text-center text-white
-          rounded-lg bg-gradient-to-r from-violet-600 to-violet-400 font-semibold'>Contact me</button>
+          rounded-lg bg-gradient-to-r from-green-700 to-yellow-600 font-semibold'>Contact me</button>
 
         </div>
       </motion.div>
@@ -223,19 +223,19 @@ const HeroPage = () => {
                   {/* Name */}
                   <label htmlFor="name" className='block text-sm font-medium text-white/90 mb-1'>Name</label>
                   <input type="text" id="name" placeholder='Enter your Name' className='w-full px-4 py-2 border border-white/20
-                  rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 bg-white/10 backdrop-blur-sm text-white placeholder-white/50' />
+                  rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-white/10 backdrop-blur-sm text-white placeholder-white/50' />
                 </div>
                 {/* Email */}
                 <div>
                   <label htmlFor="email" className='block text-sm font-medium text-white/90 mb-1'>Email</label>
                   <input type="email" id="email" placeholder='Enter your Email' className='w-full px-4 py-2 border border-white/20
-                  rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 bg-white/10 backdrop-blur-sm text-white placeholder-white/50' />
+                  rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-white/10 backdrop-blur-sm text-white placeholder-white/50' />
                 </div>
                 {/* Message */}
                 <div>
                   <label htmlFor="message" className='block text-sm font-medium text-white/90 mb-1'>Message</label>
                   <textarea rows="4" id="message" placeholder='How can we help you?' className='w-full px-4 py-2 border border-white/20
-                  rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 bg-white/10 backdrop-blur-sm text-white placeholder-white/50' />
+                  rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-white/10 backdrop-blur-sm text-white placeholder-white/50' />
                 </div>
 
                 {/* Submit Button */}
@@ -243,9 +243,9 @@ const HeroPage = () => {
                 type="submit"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className='w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500
-                hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 rounded-lg shadow-md
-                hover:shadow-lg hover:shadow-cyan-500/50 text-white font-semibold'
+                className='w-full px-4 py-2 bg-gradient-to-r from-green-700 to-yellow-600
+                hover:from-green-600 hover:to-yellow-500 transition-all duration-300 rounded-lg shadow-md
+                hover:shadow-lg hover:shadow-green-500/50 text-white font-semibold'
                 >Send Message</motion.button>
 
               </form>
