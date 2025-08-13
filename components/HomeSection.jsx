@@ -102,14 +102,14 @@ const HomeSection = () => {
 
                 {/* Main Title */}
                 <div ref={titleRef} className="space-y-4" style={{ pointerEvents: 'none' }}>
-                  <h1 className="text-7xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+                  <h1 className="text-7xl sm:text-4xl lg:text-5xl xl:text-7xl font-bold leading-tight">
                     <TextType
                       text={["NCF", "ROBOTICS"]}
                       typingSpeed={80}
                       pauseDuration={1000}
                       showCursor={true}
                       cursorCharacter="|"
-                      className="bg-gradient-to-r from-yellow-400 via-green-400 to-yellow-500 bg-clip-text section-font"
+                      className="bg-gradient-to-r from-yellow-400 via-green-400 to-yellow-500 bg-clip-text section-font md:text-4xl lg:text-5xl xl:text-6xl"
                     />
                   </h1>
                 </div>
@@ -126,21 +126,23 @@ const HomeSection = () => {
 
                 {/* CTA Buttons - Enable Pointer Events */}
                 <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 pt-4" style={{ pointerEvents: 'auto' }}>
-                  <motion.button
+                  <motion.a
+                    href="#about"
                     whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(34, 197, 94, 0.4)" }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 bg-gradient-to-r from-green-700 to-yellow-600 text-white font-semibold rounded-full shadow-lg hover:from-green-600 hover:to-yellow-500 transition-all duration-300"
+                    className="px-8 py-4 bg-gradient-to-r from-green-700 to-yellow-600 text-white font-semibold rounded-full shadow-lg hover:from-green-600 hover:to-yellow-500 transition-all duration-300 text-center cursor-pointer"
                   >
                     Get Started
-                  </motion.button>
+                  </motion.a>
                   
-                  <motion.button
+                  <motion.a
+                    href="#achievements"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 border-2 border-green-500/50 text-white font-semibold rounded-full hover:bg-green-700/20 hover:border-yellow-600/70 transition-all duration-300 backdrop-blur-sm"
+                    className="px-8 py-4 border-2 border-green-500/50 text-white font-semibold rounded-full hover:bg-green-700/20 hover:border-yellow-600/70 transition-all duration-300 backdrop-blur-sm text-center cursor-pointer"
                   >
                     Learn More
-                  </motion.button>
+                  </motion.a>
                 </div>
 
                 {/* Stats */}

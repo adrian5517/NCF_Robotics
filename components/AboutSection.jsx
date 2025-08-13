@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import winnerGoalImage from '../src/assets/images/WINNER-GOAL.jpg'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -126,7 +127,7 @@ const AboutSection = () => {
                   and practical applications that benefit society. We strive to create intelligent systems 
                   that enhance human capabilities and solve real-world challenges.
                 </p>
-                <div className="flex space-x-4">
+                {/* <div className="flex space-x-4">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-green-400">10+</div>
                     <div className="text-sm text-white/70">Years Experience</div>
@@ -139,16 +140,21 @@ const AboutSection = () => {
                     <div className="text-2xl font-bold text-green-500">50+</div>
                     <div className="text-sm text-white/70">Research Projects</div>
                   </div>
-                </div>
+                </div> */}
               </div>
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-green-700/20 to-yellow-600/20 rounded-2xl blur-2xl"></div>
                 <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
-                  <div className="text-6xl mb-4 text-center">🎯</div>
-                  <h4 className="text-xl font-semibold text-white text-center mb-2">Excellence in Innovation</h4>
-                  <p className="text-white/70 text-center">
-                    Committed to pushing the boundaries of what's possible in robotics and artificial intelligence.
+                  <div className="text-6xl mb-3 text-center"><img src={winnerGoalImage} alt="National Robotics Competition" /></div>
+                  <h4 className="text-xl font-semibold text-white text-center mb-1">National Robotics Competition</h4>
+                  <p className="text-white/70 text-center mb-4">
+                    Proud representatives of NCF at national robotics competitions, showcasing innovation and excellence.
                   </p>
+                  <div className="text-center">
+                    <span className="inline-block bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent text-sm font-semibold">
+                      "Together We Build the Future"
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
