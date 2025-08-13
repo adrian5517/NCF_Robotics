@@ -38,18 +38,19 @@ const HomeSection = () => {
       {/* Spline Background - Interactive */}
       <div className="absolute inset-0 z-0">
         <Spline
-          className="w-full h-full"
+          className="w-full h-full scale-50 sm:scale-85 md:scale-90 lg:scale-100"
           scene="https://prod.spline.design/70Y85EO9ECpfi6pA/scene.splinecode"
           style={{
             width: '100%',
             height: '100%',
-            pointerEvents: 'auto'
+            pointerEvents: 'auto',
+            transformOrigin: 'center'
           }}
         />
       </div>
 
       {/* Interactive Indicator */}
-      <div className="absolute top-4 right-4 z-30 pointer-events-none">
+      <div className="absolute top-10 right-4 z-30 pointer-events-none">
         <motion.div
           animate={{
             scale: [1, 1.1, 1],
@@ -60,10 +61,10 @@ const HomeSection = () => {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="flex items-center space-x-2 bg-cyan-500/20 backdrop-blur-sm border border-cyan-500/30 rounded-full px-3 py-1"
+          className="flex items-center space-x-2 bg-gradient-to-r from-green-700/20 to-yellow-600/20 backdrop-blur-sm border border-green-500/30 rounded-full px-3 py-1"
         >
-          <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse"></div>
-          <span className="text-cyan-300 text-xs font-medium">Move Mouse to Interact</span>
+          <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full animate-pulse"></div>
+          <span className="text-green-300 text-xs font-medium ">Move Mouse to Interact</span>
         </motion.div>
       </div>
 
@@ -76,11 +77,11 @@ const HomeSection = () => {
                 {/* Badge */}
                 <motion.div
                   ref={badgeRef}
-                  className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 backdrop-blur-sm border border-cyan-500/30 rounded-full px-4 py-2"
+                  className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-700/20 to-yellow-600/20 backdrop-blur-sm border border-green-500/30 rounded-full px-4 py-2"
                   style={{ pointerEvents: 'none' }}
                 >
-                  <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
-                  <span className="text-cyan-300 text-sm font-medium">Naga College Foundation</span>
+                  <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
+                  <span className="text-green-300 text-sm font-medium">Naga College Foundation</span>
                 </motion.div>
 
                 {/* Main Title */}
@@ -92,14 +93,14 @@ const HomeSection = () => {
                       pauseDuration={2500}
                       showCursor={true}
                       cursorCharacter="|"
-                      className="bg-gradient-to-r from-white via-cyan-200 to-blue-200 bg-clip-text text-transparent"
+                      className="bg-gradient-to-r from-white via-yellow-200 to-green-200 bg-clip-text text-transparent"
                     />
                   </h1>
                 </div>
 
                 {/* Subtitle */}
                 <div ref={subtitleRef} className="space-y-4" style={{ pointerEvents: 'none' }}>
-                  <p className="text-xl sm:text-2xl lg:text-3xl font-semibold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                  <p className="text-xl sm:text-2xl lg:text-3xl font-semibold bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">
                     Leap to the Future
                   </p>
                   <p className="text-lg text-white/80 max-w-2xl leading-relaxed">
@@ -110,9 +111,9 @@ const HomeSection = () => {
                 {/* CTA Buttons - Enable Pointer Events */}
                 <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 pt-4" style={{ pointerEvents: 'auto' }}>
                   <motion.button
-                    whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(6, 182, 212, 0.4)" }}
+                    whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(34, 197, 94, 0.4)" }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-full shadow-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300"
+                    className="px-8 py-4 bg-gradient-to-r from-green-700 to-yellow-600 text-white font-semibold rounded-full shadow-lg hover:from-green-600 hover:to-yellow-500 transition-all duration-300"
                   >
                     Get Started
                   </motion.button>
@@ -120,7 +121,7 @@ const HomeSection = () => {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 hover:border-white/50 transition-all duration-300 backdrop-blur-sm"
+                    className="px-8 py-4 border-2 border-green-500/50 text-white font-semibold rounded-full hover:bg-green-700/20 hover:border-yellow-600/70 transition-all duration-300 backdrop-blur-sm"
                   >
                     Learn More
                   </motion.button>
@@ -129,22 +130,22 @@ const HomeSection = () => {
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-6 pt-8" style={{ pointerEvents: 'none' }}>
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-cyan-400">120+</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-yellow-400">120+</div>
                     <div className="text-sm text-white/70">Students</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-blue-400">32</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-green-400">32</div>
                     <div className="text-sm text-white/70">Projects</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-purple-400">5+</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-yellow-600">5+</div>
                     <div className="text-sm text-white/70">Years</div>
                   </div>
                 </div>
               </div>
 
               {/* Right Content - Hidden on mobile to maintain clean design */}
-              <div className="hidden lg:block" style={{ pointerEvents: 'none' }}>
+              {/* <div className="hidden lg:block" style={{ pointerEvents: 'none' }}>
                 <motion.div
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -152,7 +153,7 @@ const HomeSection = () => {
                   className="relative"
                   style={{ pointerEvents: 'none' }}
                 >
-                  {/* Decorative Elements */}
+                 
                   <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-3xl blur-3xl"></div>
                   <div className="relative bg-white/5 backdrop-blur-sm border border-white/20 rounded-3xl p-8">
                     <div className="space-y-6">
@@ -188,7 +189,7 @@ const HomeSection = () => {
                     </div>
                   </div>
                 </motion.div>
-              </div>
+              </div> */}
             </div>
         </div>
       </div>

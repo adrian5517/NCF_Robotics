@@ -22,7 +22,7 @@ const HeroPage = () => {
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Fixed Responsive Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-green-900/30 to-yellow-900/30 backdrop-blur-md border-b border-green-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo Section */}
@@ -33,7 +33,7 @@ const HeroPage = () => {
               className="flex items-center space-x-3"
             >
               <div className="h-10 w-10 md:h-12 md:w-12 rounded-full bg-gradient-to-r from-green-700 to-yellow-600 p-0.5">
-                <div className="h-full w-full rounded-full bg-black/50 flex items-center justify-center">
+                <div className="h-full w-full rounded-full bg-gradient-to-r from-green-800/50 to-yellow-800/50 flex items-center justify-center">
                   <img src={ncflogo} alt="NCF Logo" className="h-8 w-8 md:h-10 md:w-10" />
                 </div>
               </div>
@@ -105,7 +105,7 @@ const HeroPage = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden bg-black/90 backdrop-blur-md border-t border-white/10"
+              className="lg:hidden bg-gradient-to-r from-green-900/95 to-yellow-900/95 backdrop-blur-md border-t border-green-500/20"
             >
               <div className="px-4 py-6 space-y-4">
                 {['Home', 'About', 'Achievements', 'Events', 'Gallery', 'Contact'].map((item) => (
@@ -119,7 +119,7 @@ const HeroPage = () => {
                   </a>
                 ))}
                 
-                <div className="pt-4 border-t border-white/20 flex items-center justify-between">
+                <div className="pt-4 border-t border-green-500/30 flex items-center justify-between">
                   <a href="#" className="text-white/80 hover:text-yellow-400 transition-colors duration-300">
                     <FiFacebook className="w-6 h-6" />
                   </a>
@@ -151,23 +151,23 @@ const HeroPage = () => {
       transition={{
         duration: 0.5
       }}
-      className='md:hidden overflow-hidden bg-white dark:bg-gray-900
+      className='md:hidden overflow-hidden bg-gradient-to-r from-green-900/95 to-yellow-900/95
       shadow-lg px-4 py-5 space-y-4'>
         <nav className='flex flex-col space-y-3 font-poppins'>
           {["Home","About", "Achievements", "Events", "Gallery", "Contact"].map((item)=>(
             <a 
-            className='text-gray-300 font-medium py-2'
+            className='text-white/90 hover:text-yellow-400 font-medium py-2 transition-colors duration-300'
             onClick={toggleMenu}
             key={item}
             href='#'>{item}</a>
           ))}
         </nav>
 
-        <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+        <div className="pt-4 border-t border-green-500/30">
           <div className='flex space-x-5'>
 
            <a href="#">
-            <FiFacebook className='w-5 h-5 text-gray-300'/>
+            <FiFacebook className='w-5 h-5 text-white/80 hover:text-yellow-400 transition-colors duration-300'/>
           </a>
 
            
@@ -180,7 +180,7 @@ const HeroPage = () => {
             openContactForm();
           }}
           className='mt-4 block w-full px-4 py-2 font-poppins text-center text-white
-          rounded-lg bg-gradient-to-r from-green-700 to-yellow-600 font-semibold'>Contact me</button>
+          rounded-lg bg-gradient-to-r from-green-700 to-yellow-600 hover:from-green-600 hover:to-yellow-500 font-semibold transition-all duration-300'>Contact me</button>
 
         </div>
       </motion.div>
@@ -195,7 +195,7 @@ const HeroPage = () => {
         animate={{opacity: 1}}
         exit={{opacity: 0}}
         transition={{ duration: 0.5 }}
-        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+        className="fixed inset-0 bg-gradient-to-br from-green-900/50 to-yellow-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
         >
 
           <motion.div 
@@ -209,7 +209,7 @@ const HeroPage = () => {
             duration: 0.8
           }}
 
-          className='bg-white/10 backdrop-blur-md rounded-xl shadow-xl w-full max-w-md p-6 border border-white/20'>
+          className='bg-gradient-to-br from-green-800/20 to-yellow-800/20 backdrop-blur-md rounded-xl shadow-xl w-full max-w-md p-6 border border-green-500/30'>
             <div className='flex justify-between items-center mb-4'>
               <h1 className='text-2xl font-bold text-white'>Get in Touch</h1>
 
@@ -222,20 +222,20 @@ const HeroPage = () => {
                 <div>
                   {/* Name */}
                   <label htmlFor="name" className='block text-sm font-medium text-white/90 mb-1'>Name</label>
-                  <input type="text" id="name" placeholder='Enter your Name' className='w-full px-4 py-2 border border-white/20
-                  rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-white/10 backdrop-blur-sm text-white placeholder-white/50' />
+                  <input type="text" id="name" placeholder='Enter your Name' className='w-full px-4 py-2 border border-green-500/30
+                  rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 bg-green-800/20 backdrop-blur-sm text-white placeholder-white/50' />
                 </div>
                 {/* Email */}
                 <div>
                   <label htmlFor="email" className='block text-sm font-medium text-white/90 mb-1'>Email</label>
-                  <input type="email" id="email" placeholder='Enter your Email' className='w-full px-4 py-2 border border-white/20
-                  rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-white/10 backdrop-blur-sm text-white placeholder-white/50' />
+                  <input type="email" id="email" placeholder='Enter your Email' className='w-full px-4 py-2 border border-green-500/30
+                  rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 bg-green-800/20 backdrop-blur-sm text-white placeholder-white/50' />
                 </div>
                 {/* Message */}
                 <div>
                   <label htmlFor="message" className='block text-sm font-medium text-white/90 mb-1'>Message</label>
-                  <textarea rows="4" id="message" placeholder='How can we help you?' className='w-full px-4 py-2 border border-white/20
-                  rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-white/10 backdrop-blur-sm text-white placeholder-white/50' />
+                  <textarea rows="4" id="message" placeholder='How can we help you?' className='w-full px-4 py-2 border border-green-500/30
+                  rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 bg-green-800/20 backdrop-blur-sm text-white placeholder-white/50' />
                 </div>
 
                 {/* Submit Button */}

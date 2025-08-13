@@ -310,8 +310,8 @@ const AchievementsSection = () => {
           {[
             { number: "5+", label: "Achievements", icon: "🏆" },
             { number: "3", label: "Awards Won", icon: "🥇" },
-            { number: "2", label: "Certifications", icon: "�" },
-            { number: "1", label: "Prototype", icon: "�" }
+            { number: "2", label: "Certifications", icon: "📜" },
+            { number: "1", label: "Prototype", icon: "🔬" }
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-4xl mb-2">{stat.icon}</div>
