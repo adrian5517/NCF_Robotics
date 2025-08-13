@@ -38,19 +38,20 @@ const HomeSection = () => {
       {/* Spline Background - Interactive */}
       <div className="absolute inset-0 z-0">
         <Spline
-          className="w-full h-full scale-50 sm:scale-85 md:scale-90 lg:scale-100"
+          className="w-full h-full "
           scene="https://prod.spline.design/70Y85EO9ECpfi6pA/scene.splinecode"
           style={{
             width: '100%',
             height: '100%',
             pointerEvents: 'auto',
-            transformOrigin: 'center'
+            transformOrigin: 'center',
+            background: 'linear-gradient(to bottom right, #013a18ff, #035824ff, #c5b202ff)'
           }}
         />
       </div>
 
       {/* Interactive Indicator */}
-      <div className="absolute top-10 right-4 z-30 pointer-events-none">
+      {/* <div className="absolute top-24 right-4  z-30 pointer-events-none mt-8 lg:mt-0">
         <motion.div
           animate={{
             scale: [1, 1.1, 1],
@@ -66,7 +67,7 @@ const HomeSection = () => {
           <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full animate-pulse"></div>
           <span className="text-green-300 text-xs font-medium ">Move Mouse to Interact</span>
         </motion.div>
-      </div>
+      </div> */}
 
       {/* Content Overlay - Selective Pointer Events */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
