@@ -1,6 +1,7 @@
 import Hero from '../components/HeroPage';
 import About from '../components/AboutSection';
 import Achievements from '../components/AchievementsSection';
+import Footer from '../components/Footer';
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <Hero />
       <About />
       <Achievements />
+      <Footer />
     </div>
   )
 }

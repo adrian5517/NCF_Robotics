@@ -46,7 +46,7 @@ const HomeSection = () => {
             height: '100%',
             pointerEvents: 'auto',
             transformOrigin: 'center',
-            background: 'linear-gradient(to bottom right, #012911ff, #035824ff, #bea200ff)'
+            background: 'linear-gradient(to bottom right, #001107ff, #00220dff, rgba(107, 92, 9, 1))'
           }}
         />
         
@@ -102,7 +102,7 @@ const HomeSection = () => {
 
                 {/* Main Title */}
                 <div ref={titleRef} className="space-y-4" style={{ pointerEvents: 'none' }}>
-                  <h1 className="text-5xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+                  <h1 className="text-7xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
                     <TextType
                       text={["NCF", "ROBOTICS"]}
                       typingSpeed={80}
