@@ -37,7 +37,7 @@ const HomeSection = () => {
     <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Spline Background - Interactive */}
       <div className="absolute inset-0 z-0">
-        <Spline
+        {/* <Spline
           className="w-full h-full "
           scene="https://prod.spline.design/70Y85EO9ECpfi6pA/scene.splinecode"
           style={{
@@ -47,7 +47,19 @@ const HomeSection = () => {
             transformOrigin: 'center',
             background: 'linear-gradient(to bottom right, #013a18ff, #035824ff, #c5b202ff)'
           }}
-        />
+        /> */}
+        <Spline
+        className="w-full h-full "
+        scene="https://prod.spline.design/SsGTbqYKisrW188l/scene.splinecode" 
+        style={{
+            width: '100%',
+            height: '100%',
+            pointerEvents: 'auto',
+            transformOrigin: 'center',
+            background: 'linear-gradient(to bottom right, #013a18ff, #035824ff, #c5b202ff)',
+            transform: 'scaleX(-1)' // Flip horizontally for a mirrored effect
+          }}
+      />
       </div>
 
       {/* Interactive Indicator */}
@@ -131,15 +143,15 @@ const HomeSection = () => {
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-6 pt-8" style={{ pointerEvents: 'none' }}>
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-yellow-400">120+</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-yellow-400">20+</div>
                     <div className="text-sm text-white/70">Students</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-green-400">32</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-green-400">11</div>
                     <div className="text-sm text-white/70">Projects</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-yellow-600">5+</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-yellow-600">2</div>
                     <div className="text-sm text-white/70">Years</div>
                   </div>
                 </div>
