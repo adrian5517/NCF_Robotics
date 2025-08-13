@@ -102,14 +102,14 @@ const HomeSection = () => {
 
                 {/* Main Title */}
                 <div ref={titleRef} className="space-y-4" style={{ pointerEvents: 'none' }}>
-                  <h1 className="text-7xl sm:text-4xl lg:text-5xl xl:text-7xl font-bold leading-tight">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
                     <TextType
                       text={["NCF", "ROBOTICS"]}
                       typingSpeed={80}
                       pauseDuration={1000}
                       showCursor={true}
                       cursorCharacter="|"
-                      className="bg-gradient-to-r from-yellow-400 via-green-400 to-yellow-500 bg-clip-text section-font md:text-4xl lg:text-5xl xl:text-6xl"
+                      className="bg-gradient-to-r from-yellow-400 via-green-400 to-yellow-500 bg-clip-text text-transparent section-font"
                     />
                   </h1>
                 </div>
