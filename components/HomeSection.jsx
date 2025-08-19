@@ -36,9 +36,9 @@ const HomeSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Spline Background - Interactive */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0">
         <Spline
-          className="w-full h-full"
+          className="w-full h-full z-[100]"
           scene="https://prod.spline.design/70Y85EO9ECpfi6pA/scene.splinecode"
           style={{
             width: '100%',
@@ -113,7 +113,7 @@ const HomeSection = () => {
                     whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(6, 182, 212, 0.4)" }}
                     whileTap={{ scale: 0.95 }}
                     className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-full shadow-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300"
-                  >
+                    href={`#about`}                  >
                     Get Started
                   </motion.button>
                   
