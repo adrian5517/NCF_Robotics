@@ -37,9 +37,23 @@ const HomeSection = () => {
     <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Spline Background - Interactive */}
       <div className="absolute inset-0 z-0">
+        {/* Desktop Spline - Hidden on mobile */}
         <Spline
-          className="w-full h-full"
-          scene="https://prod.spline.design/70Y85EO9ECpfi6pA/scene.splinecode"
+          className="w-full h-full hidden md:block"
+          scene="https://prod.spline.design/oUiFqAtE06aN-dbT/scene.splinecode"
+          style={{
+            width: '100%',
+            height: '100%',
+            pointerEvents: 'auto',
+            transformOrigin: 'center',
+            background: 'linear-gradient(to bottom right, #001107ff, #00220dff, rgba(107, 92, 9, 1))'
+          }}
+        />
+        
+        {/* Mobile Spline - Shown only on mobile */}
+        <Spline
+          className="w-full h-full block md:hidden"
+          scene="https://prod.spline.design/SsGTbqYKisrW188l/scene.splinecode" 
           style={{
             width: '100%',
             height: '100%',
@@ -52,7 +66,7 @@ const HomeSection = () => {
       </div>
 
       {/* Interactive Indicator */}
-      {/* <div className="absolute top-24 right-4  z-30 pointer-events-none mt-8 lg:mt-0">
+      <div className="absolute top-24 right-4 z-30 pointer-events-none mt-8 lg:mt-0">
         <motion.div
           animate={{
             scale: [1, 1.1, 1],
@@ -66,28 +80,27 @@ const HomeSection = () => {
           className="flex items-center space-x-2 bg-gradient-to-r from-green-700/20 to-yellow-600/20 backdrop-blur-sm border border-green-500/30 rounded-full px-3 py-1"
         >
           <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full animate-pulse"></div>
-          <span className="text-green-300 text-xs font-medium ">Move Mouse to Interact</span>
+          <span className="text-green-300 text-xs font-medium">Move Mouse to Interact</span>
         </motion.div>
-      </div> */}
+      </div>
 
       {/* Content Overlay - Selective Pointer Events */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div style={{ pointerEvents: 'none' }}>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pointer-events-none">
+        <div className="pointer-events-none">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left Content */}
-              <div ref={heroRef} className="space-y-8">
+              <div ref={heroRef} className="space-y-8 pointer-events-none">
                 {/* Badge */}
                 <motion.div
                   ref={badgeRef}
-                  className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-700/20 to-yellow-600/20 backdrop-blur-sm border border-green-500/30 rounded-full px-4 py-2"
-                  style={{ pointerEvents: 'none' }}
+                  className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-700/20 to-yellow-600/20 backdrop-blur-sm border border-green-500/30 rounded-full px-4 py-2 pointer-events-none"
                 >
                   <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
                   <span className="text-green-300 text-sm font-medium">Naga College Foundation</span>
                 </motion.div>
 
                 {/* Main Title */}
-                <div ref={titleRef} className="space-y-4" style={{ pointerEvents: 'none' }}>
+                <div ref={titleRef} className="space-y-4 pointer-events-none">
                   <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
                     <TextType
                       text={["NCF", "ROBOTICS"]}
@@ -101,7 +114,7 @@ const HomeSection = () => {
                 </div>
 
                 {/* Subtitle */}
-                <div ref={subtitleRef} className="space-y-4" style={{ pointerEvents: 'none' }}>
+                <div ref={subtitleRef} className="space-y-4 pointer-events-none">
                   <p className="text-xl sm:text-2xl lg:text-3xl font-semibold bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">
                     Leap to the Future
                   </p>
@@ -111,12 +124,12 @@ const HomeSection = () => {
                 </div>
 
                 {/* CTA Buttons - Enable Pointer Events */}
-                <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 pt-4" style={{ pointerEvents: 'auto' }}>
+                <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 pt-4 pointer-events-auto">
                   <motion.a
                     href="#about"
                     whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(34, 197, 94, 0.4)" }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-full shadow-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300"
+                    className="px-8 py-4 bg-gradient-to-r from-green-700 to-yellow-600 text-white font-semibold rounded-full shadow-lg hover:from-green-600 hover:to-yellow-500 transition-all duration-300 text-center cursor-pointer"
                   >
                     Get Started
                   </motion.a>
@@ -132,7 +145,7 @@ const HomeSection = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-6 pt-8" style={{ pointerEvents: 'none' }}>
+                <div className="grid grid-cols-3 gap-6 pt-8 pointer-events-none">
                   <div className="text-center">
                     <div className="text-2xl sm:text-3xl font-bold text-yellow-400">20+</div>
                     <div className="text-sm text-white/70">Students</div>
