@@ -2,6 +2,7 @@ import Hero from '../components/HeroPage';
 import About from '../components/AboutSection';
 import Achievements from '../components/AchievementsSection';
 import Footer from '../components/Footer';
+import Events from '../components/EventSection';
 import { Analytics } from "@vercel/analytics/react"
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
       <Hero />
       <About />
       <Achievements />
+      <Events />
       <Footer />
       <Analytics />
     </div>
